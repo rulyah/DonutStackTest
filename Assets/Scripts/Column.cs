@@ -4,7 +4,6 @@ using UnityEngine.EventSystems;
 
 public class Column : MonoBehaviour, IPointerDownHandler
 {
-
     public static event Action<int> onColumnClick; 
     
     private void Click()

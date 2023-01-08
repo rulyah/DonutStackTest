@@ -12,7 +12,6 @@ namespace States
 
         public override void OnEnter()
         {
-            Debug.Log("CheckCanMove");
             var position = FindEmptyPos(_columnPos, 3);
             if(position.z < -3) ChangeState(new InputState(_core));
             else if(position.x == 0) ChangeState(new MoveVerticalState(_core, position));

@@ -1,4 +1,4 @@
-using DG.Tweening;
+using System;
 using UnityEngine;
 
 namespace States
@@ -7,18 +7,25 @@ namespace States
     {
         public DestroySticksState(Core core) : base(core) {}
 
+        public static event Action<int> onScoreChange;
+
         public override void OnEnter()
         {
-            Debug.Log("DestroySticksState");
             var stick = Model.sticks.Find(n => n.isNedToDestroy);
             var pos = stick.transform.position;
+            onScoreChange?.Invoke(ScoreCalculated(stick));
             Factory.instance.HideStick(stick);
-            /*foreach (var stick in Model.sticks.FindAll(n => n.isNedToDestroy))
-            {
-                var emptyPos = stick.transform.position
-                Factory.instance.HideStick(stick);
-            }*/
             ChangeState(new MoveColumnState(_core, pos));
+        }
+
+        private int ScoreCalculated(Stick stick)
+        {
+            var result = 50;
+            for (var i = 0; i < stick.donuts.Count; i++)
+            {
+                result += 25;
+            }
+            return result;
         }
     }
 }

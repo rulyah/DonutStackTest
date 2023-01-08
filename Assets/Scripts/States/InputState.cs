@@ -1,4 +1,4 @@
-using UnityEngine;
+using UI;
 
 namespace States
 {
@@ -8,8 +8,13 @@ namespace States
 
         public override void OnEnter()
         {
-            Debug.Log("InputState");
             Column.onColumnClick += OnColumnClick;
+            GameScreen.onGameRestart += OnGameRestart;
+        }
+
+        private void OnGameRestart()
+        {
+            ChangeState(new RestartGameState(_core));
         }
 
         private void OnColumnClick(int posX)
@@ -20,6 +25,8 @@ namespace States
         public override void OnExit()
         {
             Column.onColumnClick -= OnColumnClick;
+            GameScreen.onGameRestart -= OnGameRestart;
+
         }
     }
 }

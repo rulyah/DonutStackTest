@@ -13,7 +13,6 @@ namespace States
 
         public override void OnEnter()
         {
-            Debug.Log("MoveColumnState");
             var sticks = Model.sticks.FindAll(n =>
                 n.transform.position.z < _position.z && (int)n.transform.position.x == (int)_position.x);
             if(sticks.Count == 0) ChangeState(new CheckToDestroyStickState(_core));

@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 
@@ -16,7 +14,6 @@ namespace States
         
         public override void OnEnter()
         {
-            Debug.Log("MoveHorizontalState");
             Model.currentStick.transform.DOMove(new Vector3(_position.x, 0.0f, -3.0f), GameConfig.instance.moveSpeed).
                 SetSpeedBased().SetEase(Ease.Linear).OnComplete(() => ChangeState(new MoveVerticalState(_core, _position)));
         }

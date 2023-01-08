@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using ToonyColorsPro.ShaderGenerator;
 using UnityEngine;
 
 public class Factory : MonoBehaviour
@@ -43,20 +42,26 @@ public class Factory : MonoBehaviour
 
     public Stick GetStick()
     {
-        if (_hiddenSticks.Count > 0)
-        {
-            var stick = _hiddenSticks[0];
-            _hiddenSticks.Remove(stick);
-            stick.gameObject.SetActive(true);
-            return stick;
-        }
-        else return Instantiate(_stickPrefab);
+        if (_hiddenSticks.Count <= 0) return Instantiate(_stickPrefab);
+        var stick = _hiddenSticks[0];
+        _hiddenSticks.Remove(stick);
+        stick.gameObject.SetActive(true);
+        return stick;
     }
 
     public void HideStick(Stick stick)
     {
         Model.sticks.Remove(stick);
         _hiddenSticks.Add(stick);
+        if (stick.donuts.Count > 0)
+        {
+            for (var i = 0; i < stick.donuts.Count; i++)
+            {
+                HideDonut(stick.donuts[i]);
+                stick.donuts.Remove(stick.donuts[i]);
+                i--;
+            }
+        }
         stick.gameObject.SetActive(false);
     }
 }

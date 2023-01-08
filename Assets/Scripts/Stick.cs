@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,18 +26,9 @@ public class Stick : MonoBehaviour
         }
     }
 
-    public void Disappear()
-    {
-        StartCoroutine(Delay(0.5f, () =>
-        {
-            priority = 0;
-            Factory.instance.HideStick(this);
-        }));
-    }
-
     private void SetPriority()
     {
-        if(donuts.Count == 3) priority = 0;
+        if (donuts.Count == 3) priority = 0;
         if (donuts.Count == 2 && donuts[0].colorId == donuts[1].colorId) priority = 3;
         if (donuts.Count == 1) priority = 2;
         if (donuts.Count == 2 && donuts[0].colorId != donuts[1].colorId) priority = 1;
@@ -49,14 +38,7 @@ public class Stick : MonoBehaviour
 
     public void Init()
     {
-        //donuts = new List<Donut>();
         SetPriority();
         isNedToDestroy = false;
-    }
-    
-    private IEnumerator Delay(float waitTime, Action action)
-    {
-        yield return new WaitForSeconds(waitTime);
-        action?.Invoke();
     }
 }

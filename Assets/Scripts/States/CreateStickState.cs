@@ -9,9 +9,7 @@ namespace States
 
         public override void OnEnter()
         {
-            Debug.Log("CreateStickState");
             var stick = Factory.instance.GetStick();
-            //stick.Init();
             stick.donuts = new List<Donut>();
             Model.sticks.Add(stick);
             stick.transform.position = GameConfig.instance.spawnPoint;

@@ -26,7 +26,6 @@ namespace States
         {
             Column.onColumnClick -= OnColumnClick;
             GameScreen.onGameRestart -= OnGameRestart;
-
         }
     }
 }

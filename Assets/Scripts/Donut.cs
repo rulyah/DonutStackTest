@@ -1,10 +1,8 @@
-using DG.Tweening;
 using UnityEngine;
 
 public class Donut : MonoBehaviour
 {
     [SerializeField] private MeshRenderer _meshRenderer;
-    private DOTween _doTween;
     public int colorId;
 
     public void Move(Stick stick)

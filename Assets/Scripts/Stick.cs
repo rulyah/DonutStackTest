@@ -9,9 +9,9 @@ public class Stick : MonoBehaviour
 
     public void AddDonut(Donut donut)
     {
-            donut.transform.SetParent(transform);
-            donuts.Add(donut);
-            SetPriority();
+        donut.transform.SetParent(transform);
+        donuts.Add(donut);
+        SetPriority();
     }
 
     public void MoveDonut(Stick stick)
@@ -29,8 +29,8 @@ public class Stick : MonoBehaviour
     private void SetPriority()
     {
         if (donuts.Count == 3) priority = 0;
-        if (donuts.Count == 2 && donuts[0].colorId == donuts[1].colorId) priority = 3;
-        if (donuts.Count == 1) priority = 2;
+        if (donuts.Count == 2 && donuts[0].colorId == donuts[1].colorId) priority = 3;//3
+        if (donuts.Count == 1) priority = 2;//2
         if (donuts.Count == 2 && donuts[0].colorId != donuts[1].colorId) priority = 1;
         if (donuts.Count == 3 && donuts[0].colorId == donuts[1].colorId && 
             donuts[1].colorId == donuts[2].colorId) isNedToDestroy = true;

@@ -399,27 +399,27 @@ PrefabInstance:
     - target: {fileID: 9134882927357567904, guid: 8514f440b940b46e9891be193524de34,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134882927357567904, guid: 8514f440b940b46e9891be193524de34,
-        type: 3}
-      propertyPath: m_LocalRotation.x
       value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 9134882927357567904, guid: 8514f440b940b46e9891be193524de34,
         type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134882927357567904, guid: 8514f440b940b46e9891be193524de34,
+        type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9134882927357567904, guid: 8514f440b940b46e9891be193524de34,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9134882927357567904, guid: 8514f440b940b46e9891be193524de34,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: 9134882927357567904, guid: 8514f440b940b46e9891be193524de34,
         type: 3}
@@ -842,37 +842,37 @@ PrefabInstance:
     - target: {fileID: 9134882927357567904, guid: 8514f440b940b46e9891be193524de34,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: -0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: 9134882927357567904, guid: 8514f440b940b46e9891be193524de34,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 9134882927357567904, guid: 8514f440b940b46e9891be193524de34,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.000013115481
       objectReference: {fileID: 0}
     - target: {fileID: 9134882927357567904, guid: 8514f440b940b46e9891be193524de34,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.0000131153165
       objectReference: {fileID: 0}
     - target: {fileID: 9134882927357567904, guid: 8514f440b940b46e9891be193524de34,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: 9134882927357567904, guid: 8514f440b940b46e9891be193524de34,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: 9134882927357567904, guid: 8514f440b940b46e9891be193524de34,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 180.002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8514f440b940b46e9891be193524de34, type: 3}
@@ -1045,6 +1045,7 @@ MonoBehaviour:
   - {fileID: 218475843}
   priority: 1
   isNedToDestroy: 0
+  isUsed: 0
 --- !u!4 &534447284
 Transform:
   m_ObjectHideFlags: 0
@@ -1618,7 +1619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9e7e88f0d7c4ba2ab037678164877ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _donutPrefab: {fileID: 7103728078898746043, guid: 8514f440b940b46e9891be193524de34,
+  _donutPrefab: {fileID: 523303391108863003, guid: 74c366f0bc3ac4f76a7c4a7b15e9164d,
     type: 3}
   _stickPrefab: {fileID: -8498317153718173074, guid: 936f052c54009498588388fbc22a00e9,
     type: 3}
@@ -2712,9 +2713,10 @@ MonoBehaviour:
   - {fileID: 2100000, guid: fa9dcd837b48342c1b98c9d661d99144, type: 2}
   maxDonutCount: 3
   spawnPoint: {x: 0, y: 0, z: -4}
-  donutOffsetY: 0.34
-  moveSpeed: 5
-  maxDistance: 1.5
+  donutOffsetY: 0.333
+  firsDonutPosY: 0.19
+  moveSpeed: 7
+  maxDistance: 1
 --- !u!4 &2063913278
 Transform:
   m_ObjectHideFlags: 0
@@ -3820,6 +3822,7 @@ MonoBehaviour:
   - {fileID: 812622838}
   priority: 1
   isNedToDestroy: 0
+  isUsed: 0
 --- !u!1 &5323989603076659945
 GameObject:
   m_ObjectHideFlags: 0

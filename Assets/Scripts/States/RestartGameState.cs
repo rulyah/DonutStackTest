@@ -6,9 +6,6 @@ namespace States
 
         public override void OnEnter()
         {
-            /*Model.sticks.Clear();
-            Model.checkedSticks.Clear();
-            Model.suitableSticks.Clear();*/
             foreach (var stick in Model.sticks)
             {
                 Factory.instance.HideStick(stick);

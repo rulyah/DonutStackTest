@@ -18,7 +18,8 @@ namespace States
             {
                 var donut = Factory.instance.GetDonut();
                 donut.transform.SetParent(stick.transform);
-                donut.transform.localPosition = new Vector3(0.0f, GameConfig.instance.donutOffsetY * stick.donuts.Count, 0.0f);
+                donut.transform.localPosition = new Vector3(0.0f, 
+                    GameConfig.instance.firsDonutPosY + GameConfig.instance.donutOffsetY * stick.donuts.Count, 0.0f);
                 stick.AddDonut(donut);
             }
             while (true)
